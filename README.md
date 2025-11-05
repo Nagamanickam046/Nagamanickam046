@@ -38,11 +38,11 @@ With a strong foundation in **Dart**, **Android Studio**, **VS Code**, and backe
 - Git & GitHub
 - JSON / REST APIs
 - SQLite / PostgreSQL
-- State Management (Provider, Riverpod)
+- State Management (Provider, Bloc)
 
 ---
 
-### 🚀 Projects
+### Projects
 
 #### 1. **Solar Project Tracker**
 *A clean, responsive app that fetches project data from APIs and maps defective panels.*
@@ -71,14 +71,14 @@ With a strong foundation in **Dart**, **Android Studio**, **VS Code**, and backe
 
 ---
 
-### ✍️ Quote I Believe In
+###  Quote I Believe In
 
 > *"Discipline is the bridge between goals and accomplishment."*  
 > — **Jim Rohn**
 
 ---
 
-### 📫 Connect With Me
+### Connect With Me
 
 If you’re hiring, collaborating, or just want to talk tech — I’d love to connect!
 
