@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 64" width="100%" height="64">
+<style>
+@keyframes bb{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes bb2{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+@keyframes csp{0%,100%{transform:scaleX(1)}25%{transform:scaleX(0.08)}75%{transform:scaleX(0.08)}}
+@keyframes cld{0%{transform:translateX(0)}100%{transform:translateX(-960px)}}
+.b1{animation:bb 0.7s ease-in-out infinite}
+.b2{animation:bb2 0.7s ease-in-out 0.25s infinite}
+.sp{animation:csp 0.5s linear infinite;transform-box:fill-box;transform-origin:center}
+.cl{animation:cld 18s linear infinite}
+.cl2{animation:cld 18s linear 9s infinite}</style>
+<rect width="900" height="64" fill="#C8131A"/>
+
+<g class="cl"><g transform="translate(50,8)" opacity="0.85">
+  <rect x="8" y="0" width="22" height="14" fill="white"/>
+  <rect x="0" y="14" width="44" height="22" fill="white"/>
+  <rect x="5" y="7" width="33" height="36" fill="white"/>
+</g><g transform="translate(260,12)" opacity="0.85">
+  <rect x="7" y="0" width="18" height="12" fill="white"/>
+  <rect x="0" y="12" width="36" height="18" fill="white"/>
+  <rect x="4" y="6" width="27" height="30" fill="white"/>
+</g><g transform="translate(480,6)" opacity="0.85">
+  <rect x="10" y="0" width="25" height="16" fill="white"/>
+  <rect x="0" y="16" width="50" height="25" fill="white"/>
+  <rect x="6" y="8" width="38" height="41" fill="white"/>
+</g><g transform="translate(700,14)" opacity="0.85">
+  <rect x="7" y="0" width="19" height="12" fill="white"/>
+  <rect x="0" y="12" width="38" height="19" fill="white"/>
+  <rect x="4" y="6" width="29" height="31" fill="white"/>
+</g><g transform="translate(880,8)" opacity="0.85">
+  <rect x="8" y="0" width="22" height="14" fill="white"/>
+  <rect x="0" y="14" width="44" height="22" fill="white"/>
+  <rect x="5" y="7" width="33" height="36" fill="white"/>
+</g></g>
+<g class="cl2"><g transform="translate(160,10)" opacity="0.85">
+  <rect x="8" y="0" width="20" height="13" fill="white"/>
+  <rect x="0" y="13" width="40" height="20" fill="white"/>
+  <rect x="5" y="6" width="30" height="33" fill="white"/>
+</g><g transform="translate(370,7)" opacity="0.85">
+  <rect x="6" y="0" width="17" height="11" fill="white"/>
+  <rect x="0" y="11" width="34" height="17" fill="white"/>
+  <rect x="4" y="5" width="26" height="28" fill="white"/>
+</g><g transform="translate(590,13)" opacity="0.85">
+  <rect x="9" y="0" width="24" height="16" fill="white"/>
+  <rect x="0" y="16" width="48" height="24" fill="white"/>
+  <rect x="6" y="8" width="36" height="40" fill="white"/>
+</g><g transform="translate(800,9)" opacity="0.85">
+  <rect x="7" y="0" width="18" height="12" fill="white"/>
+  <rect x="0" y="12" width="36" height="18" fill="white"/>
+  <rect x="4" y="6" width="27" height="30" fill="white"/>
+</g></g>
+<defs>
+  <pattern id="gp" x="0" y="0" width="40" height="14" patternUnits="userSpaceOnUse">
+    <rect width="40" height="14" fill="#7A4419"/>
+    <rect x="1" y="1" width="18" height="12" fill="#9a6030"/>
+    <rect x="21" y="1" width="18" height="12" fill="#9a6030"/>
+  </pattern>
+  <clipPath id="gc"><rect x="0" y="50" width="960" height="16"/></clipPath>
+</defs>
+<rect x="0" y="50" width="960" height="14" fill="url(#gp)" clip-path="url(#gc)">
+  <animateTransform attributeName="transform" type="translate" from="0 0" to="-40 0" dur="0.45s" repeatCount="indefinite"/>
+</rect>
+<rect x="0" y="50" width="960" height="3" fill="#43B047"/>
+<g class="b1"><g transform="translate(10,10)">
+  <rect width="36" height="36" fill="#FBD000"/>
+  <rect x="3" y="3" width="30" height="30" fill="#E5A300"/>
+  <rect width="36" height="4" fill="#b87a00"/>
+  <rect y="32" width="36" height="4" fill="#b87a00"/>
+  <rect width="4" height="36" fill="#b87a00"/>
+  <rect x="32" width="4" height="36" fill="#b87a00"/>
+  <rect x="12" y="8" width="13" height="4" fill="#5a2500"/>
+  <rect x="21" y="12" width="4" height="8" fill="#5a2500"/>
+  <rect x="12" y="20" width="9" height="4" fill="#5a2500"/>
+  <rect x="12" y="24" width="4" height="4" fill="#5a2500"/>
+  <rect x="15" y="29" width="7" height="4" fill="#5a2500"/>
+  <rect x="5" y="5" width="7" height="5" fill="#FFE566"/>
+</g></g>
+<g class="b2"><g transform="translate(52,10)">
+  <rect width="36" height="36" fill="#FBD000"/>
+  <rect x="3" y="3" width="30" height="30" fill="#E5A300"/>
+  <rect width="36" height="4" fill="#b87a00"/>
+  <rect y="32" width="36" height="4" fill="#b87a00"/>
+  <rect width="4" height="36" fill="#b87a00"/>
+  <rect x="32" width="4" height="36" fill="#b87a00"/>
+  <rect x="12" y="8" width="13" height="4" fill="#5a2500"/>
+  <rect x="21" y="12" width="4" height="8" fill="#5a2500"/>
+  <rect x="12" y="20" width="9" height="4" fill="#5a2500"/>
+  <rect x="12" y="24" width="4" height="4" fill="#5a2500"/>
+  <rect x="15" y="29" width="7" height="4" fill="#5a2500"/>
+  <rect x="5" y="5" width="7" height="5" fill="#FFE566"/>
+</g></g>
+<g class="sp" transform="translate(856,20)"><g transform="translate(0,0)">
+  <rect x="4" y="0" width="14" height="22" fill="#FBD000"/>
+  <rect x="0" y="4" width="22" height="14" fill="#FBD000"/>
+  <rect x="2" y="1" width="18" height="20" fill="#FBD000"/>
+  <rect x="6" y="1" width="10" height="20" fill="#E5A300"/>
+  <rect x="1" y="6" width="20" height="10" fill="#E5A300"/>
+  <rect x="4" y="2" width="14" height="18" fill="#E5A300"/>
+  <rect x="7" y="3" width="6" height="9" fill="#FFE566"/>
+</g></g>
+<text x="102" y="40" font-family="'Courier New',Courier,monospace" font-size="18" font-weight="900" letter-spacing="2" fill="#00000066">PLAYER SELECT</text>
+<text x="100" y="38" font-family="'Courier New',Courier,monospace" font-size="18" font-weight="900" letter-spacing="2" fill="white">PLAYER SELECT</text>
+</svg>
