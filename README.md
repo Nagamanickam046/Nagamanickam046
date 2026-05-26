@@ -101,7 +101,25 @@ STAGE 4 — [LOCKED]  ......  Coming soon
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=7A4419&height=44&text=%20%20INSERT%20COIN%20TO%20CONNECT&fontSize=16&fontColor=FBD000&fontAlign=24&fontAlignY=62" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=7A4419&height=44&text=%20%20INSERT%20COIN&fontSize=18&fontColor=FBD000&fontAlign=14&fontAlignY=62" width="100%"/>
+
+<br/>
+
+<p align="center">
+  <a href="https://Nagamanickam046.github.io/naga-runner/">
+    <img src="https://capsule-render.vercel.app/api?type=rect&color=E52521&height=70&text=%20%20PLAY%20NAGA%20RUNNER%20%20&fontSize=20&fontColor=FBD000&fontAlign=50&fontAlignY=62" width="60%"/>
+  </a>
+</p>
+
+<p align="center">
+  <sub>A pixel endless runner — dodge pipes, grab coins. Built with pure Canvas API.</sub>
+</p>
+
+> To host the game: drop <code>naga-runner.html</code> in your repo, enable GitHub Pages, and update the link above.
+
+---
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=43B047&height=44&text=%20%20CONNECT&fontSize=18&fontColor=ffffff&fontAlign=13&fontAlignY=62" width="100%"/>
 
 Hiring, collaborating, or just want to talk — reach out.
 
