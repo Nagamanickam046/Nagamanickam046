@@ -26,7 +26,7 @@
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=E52521&height=44&text=%20%20PLAYER%20SELECT&fontSize=18&fontColor=ffffff&fontAlign=18&fontAlignY=62" width="100%"/>
+<img src="./h1-player-select.svg" width="100%"/>
 
 I'm Naga. I write Flutter apps and hook them up to Django backends. Been doing mobile dev for a while — maps, REST APIs, state management, auth flows. I like things clean and fast. No bloated code, no shortcuts that bite later.
 
@@ -34,7 +34,7 @@ Tamil Nadu based. Always building something.
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=FBD000&height=44&text=%20%20SKILL%20TREE&fontSize=18&fontColor=222222&fontAlign=14&fontAlignY=62" width="100%"/>
+<img src="./h2-skill-tree.svg" width="100%"/>
 
 ```
 MOBILE          Flutter  /  Dart  /  Android Studio  /  VS Code
@@ -51,7 +51,7 @@ TOOLS           Git  /  GitHub  /  REST APIs  /  JSON
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=43B047&height=44&text=%20%20STAGES%20COMPLETED&fontSize=18&fontColor=ffffff&fontAlign=20&fontAlignY=62" width="100%"/>
+<img src="./h3-stages-completed.svg" width="100%"/>
 
 <br/>
 
@@ -85,7 +85,7 @@ STAGE 4 — [LOCKED]  ......  Coming soon
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=5C94FC&height=44&text=%20%20HIGH%20SCORES&fontSize=18&fontColor=ffffff&fontAlign=15&fontAlignY=62" width="100%"/>
+<img src="./h4-high-scores.svg" width="100%"/>
 
 <br/>
 
@@ -101,12 +101,12 @@ STAGE 4 — [LOCKED]  ......  Coming soon
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=7A4419&height=44&text=%20%20INSERT%20COIN&fontSize=18&fontColor=FBD000&fontAlign=14&fontAlignY=62" width="100%"/>
+<img src="./h5-insert-coin.svg" width="100%"/>
 
 <br/>
 
 <p align="center">
-  <a href="https://raw.githack.com/Nagamanickam046/Nagamanickam046/main/naga-runner.html">
+  <a href="https://Nagamanickam046.github.io/naga-runner/">
     <img src="https://capsule-render.vercel.app/api?type=rect&color=E52521&height=70&text=%20%20PLAY%20NAGA%20RUNNER%20%20&fontSize=20&fontColor=FBD000&fontAlign=50&fontAlignY=62" width="60%"/>
   </a>
 </p>
@@ -119,7 +119,7 @@ STAGE 4 — [LOCKED]  ......  Coming soon
 
 ---
 
-<img src="https://capsule-render.vercel.app/api?type=rect&color=43B047&height=44&text=%20%20CONNECT&fontSize=18&fontColor=ffffff&fontAlign=13&fontAlignY=62" width="100%"/>
+<img src="./h6-connect.svg" width="100%"/>
 
 Hiring, collaborating, or just want to talk — reach out.
 
