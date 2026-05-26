@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Naga Runner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#1a1a2e;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:12px;}
+canvas{image-rendering:pixelated;border:4px solid #000;outline:4px solid #FBD000;}
+p{font-family:'Press Start 2P',monospace;font-size:9px;color:#aaa;}
+</style>
+</head>
+<body>
+<canvas id="gc" width="640" height="280"></canvas>
+<p>SPACE / CLICK / TAP to jump &nbsp;|&nbsp; double jump OK</p>
+<script>
+(function(){
+const cv=document.getElementById('gc');
+const cx=cv.getContext('2d');
+const W=cv.width,H=cv.height,GY=H-40;
+const C={sky:'#5C94FC',cloud:'#fff',ground:'#7A4419',gTop:'#43B047',pipe:'#43B047',pipeDk:'#2A7A30',playerR:'#E52521',skin:'#FBD000',overall:'#5C94FC',coin:'#FBD000',brick:'#5a3012',white:'#fff',black:'#000'};
+let st='start',score=0,hi=0,spd=3,fr=0;
+const pl={x:90,y:GY-36,w:24,h:36,vy:0,jc:0,dead:false};
+let obs=[],coins=[],gOff=0,oTmr=0,nxtO=90,cTmr=0;
+const clouds=[{x:70,y:28,w:70},{x:280,y:45,w:85},{x:480,y:22,w:60}];
+function pr(x,y,w,h,col){cx.fillStyle=col;cx.fillRect(Math.round(x),Math.round(y),w,h);}
+function drawCloud(c){cx.fillStyle=C.cloud;cx.fillRect(c.x+c.w*.2,c.y,c.w*.6,10);cx.fillRect(c.x,c.y+7,c.w,15);cx.fillRect(c.x+c.w*.1,c.y+3,c.w*.8,18);}
+function drawPlayer(){
+  const p=pl;
+  if(p.dead){cx.save();cx.translate(p.x+12,p.y+18);cx.rotate(Math.sin(fr*.25)*.4);cx.translate(-(p.x+12),-(p.y+18));}
+  pr(p.x+3,p.y-9,18,4,C.playerR);pr(p.x-1,p.y-5,26,5,C.playerR);
+  pr(p.x+2,p.y,20,13,C.skin);
+  pr(p.x+4,p.y+2,5,5,C.black);pr(p.x+15,p.y+2,5,5,C.black);
+  pr(p.x+2,p.y+10,20,3,C.ground);
+  pr(p.x,p.y+13,p.w,16,C.overall);
+  pr(p.x+2,p.y+17,8,4,C.playerR);pr(p.x+14,p.y+17,8,4,C.playerR);
+  pr(p.x,p.y+29,10,7,C.playerR);pr(p.x+14,p.y+29,10,7,C.playerR);
+  if(p.dead)cx.restore();
+}
+function drawPipe(o){pr(o.x,GY-o.h,40,o.h,C.pipe);pr(o.x+7,GY-o.h,7,o.h,C.pipeDk);pr(o.x-4,GY-o.h,48,16,C.pipe);pr(o.x+3,GY-o.h,8,16,C.pipeDk);pr(o.x-4,GY-o.h,48,3,C.pipeDk);}
+function drawCoin(c){const wb=Math.cos(c.t*.12)*5;const cw=Math.max(4,13+wb);const off=(13-cw)/2;pr(c.x+off,c.y,cw,15,C.coin);pr(c.x+off,c.y,2,15,'#c8880a');pr(c.x+off+cw-2,c.y,2,15,'#c8880a');pr(c.x+off,c.y,cw,2,'#c8880a');pr(c.x+off,c.y+13,cw,2,'#c8880a');pr(c.x+off+3,c.y+3,3,5,C.white);}
+function drawGround(){pr(0,GY,W,40,C.ground);pr(0,GY,W,4,C.gTop);cx.fillStyle=C.brick;const bw=40,off=gOff%bw;for(let x=-off;x<W;x+=bw)cx.fillRect(x,GY,2,40);cx.fillRect(0,GY+20,W,2);}
+function txt(s,x,y,sz,col,al='left'){cx.font=`${sz}px 'Press Start 2P',monospace`;cx.textAlign=al;cx.fillStyle=C.black;cx.fillText(s,x+2,y+2);cx.fillStyle=col;cx.fillText(s,x,y);}
+function hits(ax,ay,aw,ah,bx,by,bw,bh){return ax<bx+bw&&ax+aw>bx&&ay<by+bh&&ay+ah>by;}
+function doJump(){if(st==='start'){st='playing';return;}if(st==='dead'){hi=Math.max(hi,score);st='start';return;}if(pl.jc<2){pl.vy=-12.5;pl.jc++;}}
+document.addEventListener('keydown',e=>{if(e.code==='Space'||e.code==='ArrowUp'){e.preventDefault();doJump();}});
+cv.addEventListener('click',doJump);
+cv.addEventListener('touchstart',e=>{e.preventDefault();doJump();},{passive:false});
+function update(){
+  fr++;
+  if(st!=='playing')return;
+  score++;spd=3+Math.floor(score/400)*.6;gOff+=spd;
+  pl.vy+=0.58;pl.y+=pl.vy;
+  if(pl.y>=GY-36){pl.y=GY-36;pl.vy=0;pl.jc=0;}
+  clouds.forEach(c=>{c.x-=spd*.28;if(c.x+c.w<0)c.x=W+c.w;});
+  oTmr++;
+  if(oTmr>=nxtO){obs.push({x:W+10,h:44+Math.random()*54});oTmr=0;nxtO=55+Math.random()*75;}
+  obs=obs.filter(o=>{o.x-=spd;if(hits(pl.x+3,pl.y,pl.w-6,pl.h-4,o.x-3,GY-o.h,46,o.h)){st='dead';pl.dead=true;pl.vy=-11;}return o.x>-60;});
+  cTmr++;
+  if(cTmr>35&&Math.random()<.035){coins.push({x:W+10+Math.random()*50,y:GY-90-Math.random()*70,t:0});cTmr=0;}
+  coins=coins.filter(c=>{c.x-=spd;c.t++;if(hits(pl.x,pl.y,pl.w,pl.h,c.x,c.y,13,15)){score+=100;return false;}return c.x>-20;});
+}
+function draw(){
+  pr(0,0,W,H,C.sky);
+  clouds.forEach(drawCloud);
+  coins.forEach(drawCoin);
+  obs.forEach(drawPipe);
+  drawGround();drawPlayer();
+  txt(Math.floor(score/10)+'',W-16,30,12,C.white,'right');
+  if(hi>0)txt('HI '+Math.floor(hi/10),W-16,52,9,C.coin,'right');
+  if(st==='start'){cx.fillStyle='rgba(0,0,0,0.5)';cx.fillRect(0,0,W,H);txt('NAGA RUNNER',W/2,72,14,C.coin,'center');txt('AVOID THE PIPES',W/2,110,8,C.white,'center');txt('GRAB THE COINS',W/2,128,8,C.white,'center');if(Math.floor(fr/18)%2===0)txt('> PRESS SPACE OR CLICK <',W/2,178,8,C.playerR,'center');}
+  if(st==='dead'){cx.fillStyle='rgba(0,0,0,0.52)';cx.fillRect(0,0,W,H);txt('GAME OVER',W/2,80,16,C.playerR,'center');txt('SCORE  '+Math.floor(score/10),W/2,120,10,C.white,'center');if(hi>0)txt('BEST   '+Math.floor(hi/10),W/2,142,10,C.coin,'center');if(Math.floor(fr/18)%2===0)txt('CLICK TO RETRY',W/2,185,9,C.gTop,'center');}
+}
+(function loop(){update();draw();requestAnimationFrame(loop);})();
+})();
+</script>
+</body>
+</html>
